@@ -15,3 +15,4 @@
 //= require nivo
 //= require bootstrap-sprockets
 //= require_tree .
+//= require_selft

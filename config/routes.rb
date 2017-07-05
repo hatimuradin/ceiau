@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'visitors#index'
+  get 'faculty', to: 'faculty#index'
+  get 'faculty/:name', to: 'faculty#infotab'
+  #get 'pages/index'
+
+  root to: 'pages#index'
 end

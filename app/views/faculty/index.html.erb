@@ -1,0 +1,30 @@
+<div class="container">
+<table class="maintable">
+  <% @faculty_members.each do |faculty_member| %>
+    <tr>
+      <td>
+      	 <div class="facultypic">
+      	 	<img src= <%= asset_path(faculty_member.image_path) %> > 
+      	 </div>
+      	 <div class="infobox">
+      	 	<table class="innertable">
+      	 		<tr>
+      	 			<td>نام و نام خانوادگی:</td>
+					<td>	<%= faculty_member.first_name %> &nbsp <%= faculty_member.last_name %>  </td>
+				</tr>
+				<tr>
+					<td>پست الکترونیکی:</td>
+					<td>  <%=  (faculty_member.email != nil) ?  faculty_member.email : '-' %> </td>
+				</tr>
+				<tr>
+					<td>شماره تماس:</td>
+					<td> <%=   (faculty_member.phone != nil) ? faculty.faculty_member.phone : '-' %> </td>
+				</tr>
+
+			</table>
+		 </div>
+	  </td>
+    </tr>
+  <% end %>
+</table>
+</div>

@@ -1,0 +1,26 @@
+
+
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Contact')">اطلاعات تماس</button>
+  <button class="tablinks" onclick="openTab(event, 'Education')">تحصیلات</button>
+  <button class="tablinks" onclick="openTab(event, 'Research')">زمینه‌های تحقیقاتی</button>
+</div>
+
+<div id="Contact" class="tabcontent">
+	<p> تلفن تماس: <%=   (@faculty_member.phone != nil) ? faculty.faculty_member.phone : '-' %> </p>
+	<p> پست الکترونیک: <%=   (@faculty_member.email != nil) ? faculty.faculty_member.email : '-' %> </p>
+	<p> اتاق: <%=   (@faculty_member.room != nil) ? faculty.faculty_member.room : '-' %> </p>
+	<p> وبسایت: <%=   (@faculty_member.home_page != nil) ? faculty.faculty_member.home_page : '-' %> </p>
+
+</div>
+
+<div id="Research" class="tabcontent">
+
+</div>
+
+<div id="Education" class="tabcontent">
+
+</div>
+
+
+
