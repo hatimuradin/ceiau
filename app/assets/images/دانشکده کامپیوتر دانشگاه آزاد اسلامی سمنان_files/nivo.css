@@ -1,0 +1,661 @@
+/*
+ * jQuery Nivo Slider v3.2
+ * http://nivo.dev7studios.com
+ *
+ * Copyright 2012, Dev7studios
+ * Free to use and abuse under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+/* The Nivo Slider styles */
+/* line 12, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivoSlider {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+/* line 19, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivoSlider img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  max-width: none;
+}
+
+/* line 26, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-main-image {
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;
+}
+
+/* If an image is wrapped in a link */
+/* line 33, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivoSlider a.nivo-imageLink {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  z-index: 6;
+  display: none;
+  background: white;
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+
+/* The slices and boxes in the Slider */
+/* line 50, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-slice {
+  display: block;
+  position: absolute;
+  z-index: 5;
+  height: 100%;
+  top: 0;
+}
+
+/* line 58, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-box {
+  display: block;
+  position: absolute;
+  z-index: 5;
+  overflow: hidden;
+}
+
+/* line 65, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-box img {
+  display: block;
+}
+
+/* Caption styles */
+/* line 70, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-caption {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  background: #000;
+  color: #fff;
+  width: 100%;
+  z-index: 8;
+  padding: 5px 10px;
+  opacity: 0.8;
+  overflow: hidden;
+  display: none;
+  -moz-opacity: 0.8;
+  filter: alpha(opacity=8);
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+}
+
+/* line 89, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-caption p {
+  padding: 5px;
+  margin: 0;
+}
+
+/* line 94, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-caption a {
+  display: inline !important;
+}
+
+/* line 98, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-html-caption {
+  display: none;
+}
+
+/* Direction nav styles (e.g. Next & Prev) */
+/* line 103, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-directionNav a {
+  position: absolute;
+  top: 45%;
+  z-index: 9;
+  cursor: pointer;
+}
+
+/* line 110, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-prevNav {
+  left: 0px;
+}
+
+/* line 114, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-nextNav {
+  right: 0px;
+}
+
+/* Control nav styles (e.g. 1,2,3...) */
+/* line 119, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-controlNav {
+  text-align: center;
+  padding: 15px 0;
+}
+
+/* line 124, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-controlNav a {
+  cursor: pointer;
+}
+
+/* line 128, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.nivo-controlNav a.active {
+  font-weight: bold;
+}
+
+/* Themes */
+/* line 134, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light.slider-wrapper {
+  background: #fff;
+  padding: 10px;
+}
+
+/* line 139, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivoSlider {
+  position: relative;
+  background: #fff url(/assets/light/loading-0eddaab3b8cb0b15d81d62e5ae5960329c3e576ea78dc321b20734ab20271847.gif) no-repeat 50% 50%;
+  margin-bottom: 10px;
+  overflow: visible;
+}
+
+/* line 146, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivoSlider img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+
+/* line 153, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivoSlider a {
+  border: 0;
+  display: block;
+}
+
+/* line 158, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivo-controlNav {
+  text-align: left;
+  padding: 0;
+  position: relative;
+  z-index: 10;
+}
+
+/* line 165, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivo-controlNav a {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: url(/assets/light/bullets-405dc19a2319cff81e8642886a2a460bdc1cbdeadd373f72d6b66ac02d6cdaa7.png) no-repeat;
+  text-indent: -9999px;
+  border: 0;
+  margin: 0 2px;
+}
+
+/* line 175, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivo-controlNav a.active {
+  background-position: 0 100%;
+}
+
+/* line 179, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivo-directionNav a {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url(/assets/light/arrows-b0d7be67046d87cc78a6ce4b2dc14c4fab5868c0fbdb765257b4312cd06016d6.png) no-repeat;
+  text-indent: -9999px;
+  border: 0;
+  top: auto;
+  bottom: -36px;
+  z-index: 11;
+}
+
+/* line 191, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivo-directionNav a:hover {
+  background-color: #eee;
+  border-radius: 2px;
+}
+
+/* line 198, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light a.nivo-nextNav {
+  background-position: 160% 50%;
+  right: 0px;
+}
+
+/* line 203, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light a.nivo-prevNav {
+  background-position: -60% 50%;
+  left: auto;
+  right: 35px;
+}
+
+/* line 209, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivo-caption {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* line 213, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivo-caption a {
+  color: #fff;
+  border-bottom: 1px dotted #fff;
+}
+
+/* line 218, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivo-caption a:hover {
+  color: #fff;
+}
+
+/* line 222, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivo-controlNav.nivo-thumbs-enabled {
+  width: 80%;
+}
+
+/* line 226, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivo-controlNav.nivo-thumbs-enabled a {
+  width: auto;
+  height: auto;
+  background: none;
+  margin-bottom: 5px;
+}
+
+/* line 233, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-light .nivo-controlNav.nivo-thumbs-enabled img {
+  display: block;
+  width: 120px;
+  height: auto;
+}
+
+/* line 239, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivoSlider {
+  position: relative;
+  background: #fff url(/assets/default/loading-0eddaab3b8cb0b15d81d62e5ae5960329c3e576ea78dc321b20734ab20271847.gif) no-repeat 50% 50%;
+  margin-bottom: 10px;
+  -webkit-box-shadow: 0px 1px 5px 0px #4a4a4a;
+  box-shadow: 0px 1px 5px 0px #4a4a4a;
+}
+
+/* line 248, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivoSlider img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+
+/* line 255, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivoSlider a {
+  border: 0;
+  display: block;
+}
+
+/* line 260, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivo-controlNav {
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* line 265, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivo-controlNav a {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background: url(/assets/default/bullets-97f65015a491719ae9dbf1afc7948f8e57f946a6822c6a924fb5826265e89af6.png) no-repeat;
+  text-indent: -9999px;
+  border: 0;
+  margin: 0 2px;
+}
+
+/* line 275, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivo-controlNav a.active {
+  background-position: 0 -22px;
+}
+
+/* line 279, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivo-directionNav a {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url(/assets/default/arrows-6821ca4ae2508bdba08e189040928a0769f0a71b12fdd4325c3ae80ef5636bb8.png) no-repeat;
+  text-indent: -9999px;
+  border: 0;
+  opacity: 0;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+/* line 293, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default:hover .nivo-directionNav a {
+  opacity: 1;
+}
+
+/* line 297, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default a.nivo-nextNav {
+  background-position: -30px 0;
+  right: 15px;
+}
+
+/* line 302, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default a.nivo-prevNav {
+  left: 15px;
+}
+
+/* line 306, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivo-caption {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* line 310, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivo-caption a {
+  color: #fff;
+  border-bottom: 1px dotted #fff;
+}
+
+/* line 315, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivo-caption a:hover {
+  color: #fff;
+}
+
+/* line 319, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivo-controlNav.nivo-thumbs-enabled {
+  width: 100%;
+}
+
+/* line 323, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivo-controlNav.nivo-thumbs-enabled a {
+  width: auto;
+  height: auto;
+  background: none;
+  margin-bottom: 5px;
+}
+
+/* line 330, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-default .nivo-controlNav.nivo-thumbs-enabled img {
+  display: block;
+  width: 120px;
+  height: auto;
+}
+
+/* line 336, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark.slider-wrapper {
+  background: #222;
+  padding: 10px;
+}
+
+/* line 341, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivoSlider {
+  position: relative;
+  background: #fff url(/assets/dark/loading-0eddaab3b8cb0b15d81d62e5ae5960329c3e576ea78dc321b20734ab20271847.gif) no-repeat 50% 50%;
+  margin-bottom: 10px;
+  overflow: visible;
+}
+
+/* line 348, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivoSlider img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+
+/* line 355, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivoSlider a {
+  border: 0;
+  display: block;
+}
+
+/* line 360, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivo-controlNav {
+  text-align: left;
+  padding: 0;
+  position: relative;
+  z-index: 10;
+}
+
+/* line 367, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivo-controlNav a {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: url(/assets/dark/bullets-a64b6506f6aa55125032d9734e622e9a208d3634571df56205f2310caa693d82.png) no-repeat 0 2px;
+  text-indent: -9999px;
+  border: 0;
+  margin: 0 2px;
+}
+
+/* line 377, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivo-controlNav a.active {
+  background-position: 0 100%;
+}
+
+/* line 381, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivo-directionNav a {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url(/assets/dark/arrows-2e2c15237d579c18591df4cde373cae7e52aab7e6fe4728c3869a7acebba8e5e.png) no-repeat;
+  text-indent: -9999px;
+  border: 0;
+  top: auto;
+  bottom: -36px;
+  z-index: 11;
+}
+
+/* line 393, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivo-directionNav a:hover {
+  background-color: #333;
+  border-radius: 2px;
+}
+
+/* line 400, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark a.nivo-nextNav {
+  background-position: -16px 50%;
+  right: 0px;
+}
+
+/* line 405, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark a.nivo-prevNav {
+  background-position: 11px 50%;
+  left: auto;
+  right: 35px;
+}
+
+/* line 411, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivo-caption {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* line 415, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivo-caption a {
+  color: #fff;
+  border-bottom: 1px dotted #fff;
+}
+
+/* line 420, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivo-caption a:hover {
+  color: #fff;
+}
+
+/* line 424, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivo-controlNav.nivo-thumbs-enabled {
+  width: 80%;
+}
+
+/* line 428, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivo-controlNav.nivo-thumbs-enabled a {
+  width: auto;
+  height: auto;
+  background: none;
+  margin-bottom: 5px;
+}
+
+/* line 435, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-dark .nivo-controlNav.nivo-thumbs-enabled img {
+  display: block;
+  width: 120px;
+  height: auto;
+}
+
+/* line 441, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar.slider-wrapper {
+  position: relative;
+  border: 1px solid #333;
+  overflow: hidden;
+}
+
+/* line 447, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivoSlider {
+  position: relative;
+  background: #fff url(/assets/bar/loading-0eddaab3b8cb0b15d81d62e5ae5960329c3e576ea78dc321b20734ab20271847.gif) no-repeat 50% 50%;
+}
+
+/* line 452, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivoSlider img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+
+/* line 459, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivoSlider a {
+  border: 0;
+  display: block;
+}
+
+/* line 464, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivo-controlNav {
+  position: absolute;
+  left: 0;
+  bottom: -41px;
+  z-index: 10;
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  padding: 5px 0;
+  border-top: 1px solid #333;
+  background: #333;
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: -webkit-gradient(linear, left top, left bottom, from(#565656), to(#333333));
+  background: linear-gradient(to bottom, #565656 0%, #333333 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#565656', endColorstr='#333333', GradientType=0);
+  /* IE6-9 */
+  opacity: 0.5;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+/* line 489, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar:hover .nivo-controlNav {
+  bottom: 0;
+  opacity: 1;
+}
+
+/* line 494, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivo-controlNav a {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background: url(/assets/bar/bullets-97f65015a491719ae9dbf1afc7948f8e57f946a6822c6a924fb5826265e89af6.png) no-repeat;
+  text-indent: -9999px;
+  border: 0;
+  margin: 5px 2px 0 2px;
+}
+
+/* line 504, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivo-controlNav a.active {
+  background-position: 0 -22px;
+}
+
+/* line 508, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivo-directionNav a {
+  display: block;
+  border: 0;
+  color: #fff;
+  text-transform: uppercase;
+  top: auto;
+  bottom: 10px;
+  z-index: 11;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  opacity: 0.5;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+/* line 526, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar a.nivo-nextNav {
+  right: -50px;
+}
+
+/* line 530, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar a.nivo-prevNav {
+  left: -50px;
+}
+
+/* line 534, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar:hover a.nivo-nextNav {
+  right: 15px;
+  opacity: 1;
+}
+
+/* line 539, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar:hover a.nivo-prevNav {
+  left: 15px;
+  opacity: 1;
+}
+
+/* line 544, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivo-directionNav a:hover {
+  color: #ddd;
+}
+
+/* line 548, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivo-caption {
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+/* line 556, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar:hover .nivo-caption {
+  bottom: 41px;
+}
+
+/* line 560, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivo-caption a {
+  color: #fff;
+  border-bottom: 1px dotted #fff;
+}
+
+/* line 565, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivo-caption a:hover {
+  color: #fff;
+}
+
+/* line 569, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivo-controlNav.nivo-thumbs-enabled {
+  width: 100%;
+}
+
+/* line 573, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivo-controlNav.nivo-thumbs-enabled a {
+  width: auto;
+  height: auto;
+  background: none;
+  margin-bottom: 5px;
+}
+
+/* line 580, /home/hatef/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/nivo-rails-1.0.1/vendor/assets/stylesheets/nivo.scss */
+.theme-bar .nivo-controlNav.nivo-thumbs-enabled img {
+  display: block;
+  width: 120px;
+  height: auto;
+}
