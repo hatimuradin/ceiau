@@ -14,3 +14,11 @@
  *= require_self
  *= require nivo
  */
+
+@font-face {
+  font-family: 'BRoya';
+  src: url(asset_path("BRoya.eot"));
+  src: url(asset_path("BRoya.eot#iefix")) format('embedded-opentype'),
+  url(asset_path("BRoya.woff")) format('woff'),
+  url(asset_path("BRoya.ttf")) format('truetype');
+}

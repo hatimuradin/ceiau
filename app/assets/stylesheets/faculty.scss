@@ -2,59 +2,65 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
 .container {
 	align: center;
+    width: 100%;
+    padding: 0px;
 }
 
-#maintable {  
+.maintable {  
     color: #333;
     width: 100%; 
-    border-collapse: 
-    collapse; border-spacing: 0; 
+    border-collapse: collapse; 
+    border-spacing: 0; 
     align: middle;
+    font-size: medium;
 }
 
-#maintable td, th {  
+.maintable td, th {  
     border: 1px solid transparent; /* No more visible border */
-    height: 30px; 
+    height: 3px; 
     transition: all 0.3s;  /* Simple transition for hover effect */
 }
 
-#maintable th {  
-    background: #DFDFDF;  /* Darken header a bit */
+.maintable th {  
+    background: #dfdfdf;  /* Darken header a bit */
     font-weight: bold;
 }
 
-#maintable td {  
+.maintable td {  
     background: #000000;
-    text-align: center;
+    text-align: right;
 }
 
 /* Cells in even rows (2,4,6...) are one color */        
-tr:nth-child(even) td { background: #F1F1F1; }   
+tr:nth-child(even) td { background: #c5f1ff; }
 
 /* Cells in odd rows (1,3,5...) are another (excludes header cells)  */        
-tr:nth-child(odd) td { background: #FEFEFE; }  
+tr:nth-child(odd) td { background: #c5f1ff; }
 
-tr td:hover { background: #666; color: #FFF; }  
+ tr td :hover {  color: #0000cd ; }
 /* Hover cell effect! */
 
 .infobox {
 	margin: 3px;
-	padding: 10px;
+	padding: 60px 10px 10px 10px;
 	display: table-cell;
-	vertical-align : middle;
-    border: 1px solid black;
+	vertical-align : middle ;
+        border: 1px ;
+        
 }
 
 .facultypic {
-    width: 50%;
-    height: 120px;
+    width: 20%;
+    height: 190px;
     float: right;
     margin: 3px;
     padding: 3px;
     display: table-cell;
-    border: 1px solid red;
+    border: 1px ;
 }
 
 img{

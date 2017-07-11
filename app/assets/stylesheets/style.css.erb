@@ -1,9 +1,10 @@
 *{
-	font-family: Tahoma, Arial, san-serif;
+	font-family: BRoya;
 	font-weight: normal;
 }
+
 body{
-	background: #ddd;
+	background: rgba(195, 223, 255, 0.55);
 	font-size: 78%;
 	color: #444;
 	line-height: 1.5;
@@ -11,36 +12,40 @@ body{
 }
 .body{
 	margin: 0 auto;
-	width: 85%;
+	width: 95%;
 	clear: both;
 }
 h2{
-	font-size: 14px;
-	color: #D21;
+	font-size: 18px;
+	color: #1b38dd;
 }
 a{
 	color: #0c426f;
 	text-decoration: none;
 }
 a:hover{
-	color: #D21;
+	color: #5c8cdd;
 }
 .header{
 	width: 100%;
-	height: 160px;
+	height: 200px;
 	background: #0c426f;
+    background-image:url(<%= asset_url('logo.png') %>);
+    background-size: cover;
 	margin: 10px 0 1px 0;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 }
+/*
 .logo{
-	float: right;
+	float: center;
 	width: 300px;
 	height: 100px;
 	margin: 25px 20px 0 0;
 	background: url(<%= asset_url('logo.png') %>) no-repeat;
 }
+*/
 .logoleft{
 	float: left;
 	width: 139px;
@@ -69,7 +74,13 @@ a:hover{
 .mainheader nav ul li{
 	float: right;
 	display: inline;
+padding: 4px 3px;
 }
+
+.mainheader nav ul li:active, li:hover{
+	background: #072c4c
+}
+
 .mainheader a{
 	color: #FFF;
 	height: 20px;
@@ -80,13 +91,11 @@ a:hover{
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 }
-.mainheader a:active, .mainheader a:hover{
-	background: #072c4c;
-}
+
 .mainheader nav .lanen{
 	float: left;
 }
-.search {
+/*.search {
 	position: relative;
 	float: left;
 	margin: 115px 0 0 10px;
@@ -140,7 +149,7 @@ a:hover{
 }
 .language a:hover{
 	background: #0a3559;
-}
+}    */
 .post-info{
 	color: #999;
 	font-size: 90%;
@@ -163,11 +172,11 @@ a:hover{
 	transition-timing-function: ease;
 }
 .list li:hover{
-	padding-right: 14px;
+	padding-right: 16px;
 }
-.bodynews{
+/*.bodynews{
 	float: right;
-	background: #EEE;
+	background: #7cf;
 	padding: 8px;
 	margin-bottom: 6px;
 	border: 1px solid #BBB;
@@ -176,7 +185,7 @@ a:hover{
 	-webkit-border-radius: 3px;
 }
 .bodynews:hover{
-	background: #DDD;
+	background: #aaa;
 	cursor: default;
 }
 .bodynews img{
@@ -190,14 +199,15 @@ a:hover{
 	margin: 0;
 	padding: 0;
 	text-align: justify;
-}
+}*/
+
 .rightsidebar{
 	float: right;
 	width: 18%;
 	height: 285px;
 	padding: 0 1%;
 	margin: 2% 0 0 1%;
-	background: #EEE;
+	background: rgba(174, 228, 246, 0.52);
 	border: 1px solid #CCC;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -205,24 +215,24 @@ a:hover{
 }
 .middlesidebar{
 	float: right;
-	width: 12%;
+	width: 18%;
 	height: 285px;
 	padding: 0 1%;
 	margin: 2% 0 0 1%;
-	background: #EEE;
-	border: 1px solid #CCC;
+	background: rgba(174, 228, 246, 0.52);
+	border: 1px solid rgba(125, 211, 246, 0.31);
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 }
 .leftsidebar{
 	float: right;
-	width: 24%;
+	width: 18%;
 	height: 285px;
 	padding: 0 1%;
 	margin: 2% 0 0 1%;
-	background: #EEE;
-	border: 1px solid #CCC;
+	background: rgba(174, 228, 246, 0.52);
+	border: 1px solid #ccc;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -233,7 +243,7 @@ a:hover{
 	height: 285px;
 	padding: 0 1%;
 	margin: 2% 0 1% 0;
-	background: #EEE;
+	background: rgba(174, 228, 246, 0.52);
 	border: 1px solid #CCC;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -313,7 +323,7 @@ a:hover{
 	-webkit-border-radius: 3px;
 }
 .mainfooter a{
-	color: #CCC;
+	color: #ccc;
 }
 .mainfooter a:hover{
 	color: #999;

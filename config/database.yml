@@ -7,7 +7,7 @@ default: &default
 development:
   <<: *default
   database: ceiau
-  username: postgres
+  username: hatef
   password: password
 
 # Warning: The database defined as "test" will be erased and
@@ -16,11 +16,11 @@ development:
 test:
   <<: *default
   database: ceiau
-  username: postgres
+  username: hatef
   password: password
 
 production:
   <<: *default
   database: ceiau
-  username: postgres
+  username: hatef
   password: password
